@@ -14,8 +14,9 @@ import {
     NavbarText
 } from 'reactstrap';
 
-// import Home from '../../pages/home/home';
-
+import Home from '../../pages/home/home';
+import Jobs from '../../pages/jobs/jobs'
+import Login from '../../pages/login/login'
 
 const Headers = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,9 @@ const Headers = (props) => {
                     <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink href="https://www.ohenriquerocha.com.br">Site Pessoal</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="https://github.com/hrocha85">GitHub</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="https://github.com/hrocha85">GitHub</NavLink>
