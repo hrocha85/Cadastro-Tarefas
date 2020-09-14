@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
-export class formLogin extends Component {
-    render() {
+const formLogin = () =>  {
+    
         return (
             <div>
                  <Form inline>
@@ -20,7 +20,7 @@ export class formLogin extends Component {
                 
             </div>
         )
-    }
+    
 }
 
 export default formLogin;
