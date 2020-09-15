@@ -5,8 +5,7 @@ import {jobs} from '../pages/jobs/jobs';
 import {LoginPage} from '../pages/login/login';
 
 
-import { BrowserRouter, Route, Router, Switch}  from "react-router-dom";
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+import { BrowserRouter, Route, Switch}  from "react-router-dom";
 import App from '../App'
 
 export class routes extends Component {
