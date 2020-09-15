@@ -11,7 +11,7 @@ import {
     // DropdownToggle,
     // DropdownMenu,
     // DropdownItem,
-    NavbarText
+    // NavbarText
 } from 'reactstrap';
 // import{ Link } from 'react-router-dom';
 // import Home from '../../pages/home/home';

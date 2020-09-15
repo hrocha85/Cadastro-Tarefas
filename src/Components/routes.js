@@ -5,8 +5,9 @@ import {jobs} from '../pages/jobs/jobs';
 import {LoginPage} from '../pages/login/login';
 
 
-import { BrowserRouter, Route, Switch}  from "react-router-dom";
-
+import { BrowserRouter, Route, Router, Switch}  from "react-router-dom";
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+import App from '../App'
 
 export class routes extends Component {
     render() {
@@ -16,6 +17,7 @@ export class routes extends Component {
               <Route path="/" component={Home} exact />
               <Route path="/tarefas" component={jobs} />
               <Route path="/login" component={LoginPage} />
+              <Route path="/App" component={App} />
             </Switch>
             </BrowserRouter>
         )

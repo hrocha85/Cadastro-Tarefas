@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-// import store from './app/store';
-// import { Provider } from 'react-redux';
+
 import * as serviceWorker from './serviceWorker';
 import Headers from './Components/nav/nav.js';
 
@@ -14,8 +13,10 @@ import Routes from './Components/routes';
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <Headers />
     <Routes />
+
     </React.StrictMode>
     ,document.getElementById('root')
 );
