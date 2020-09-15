@@ -1,4 +1,14 @@
 .titulo-home{
 
 margin-top: 150px;
+margin-left: 35px;
+margin-right: 25px;
+}
+
+.home1{
+
+    background-image: url("./beach.jpg") ;
+   justify-content: space-between;
+    background-size: cover;
+
 }
