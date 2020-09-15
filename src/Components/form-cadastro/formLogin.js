@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-
-const formLogin = () =>  {
-    
+export class FormLogin extends Component {
+    render() {
         return (
             <div>
-                 <Form inline>
+                   <Form inline>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Label for="exampleEmail" className="mr-sm-2">Email</Label>
                         <Input type="email" name="email" id="exampleEmail" placeholder="seuemailn@aqui.com.br" />
@@ -17,10 +16,11 @@ const formLogin = () =>  {
                     </FormGroup>
                     <Button>Submit</Button>
                 </Form>
-                
+            
+
             </div>
         )
-    
+    }
 }
 
-export default formLogin;
+export default FormLogin;

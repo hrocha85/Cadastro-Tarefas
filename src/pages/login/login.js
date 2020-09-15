@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import FormLogin from '../../Components/form-cadastro/formLogin'
 
 export class LoginPage extends Component {
     render() {
         return (
             <div>
-                <h1>teste</h1>
+                <FormLogin />
             </div>
         )
     }
 }
 
-export default LoginPage
+export default LoginPage;
