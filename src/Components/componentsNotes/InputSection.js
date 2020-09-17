@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import noteActions from '../redux/actions/noteActions';
 import inputActions from '../redux/actions/inputActions';
@@ -8,23 +8,25 @@ const InputSection = () => {
   const id = useSelector(state => state.inputs.id);
   const title = useSelector(state => state.inputs.title);
   const content = useSelector(state => state.inputs.content);
-  // const day = useSelector()
+  const day = useSelector(state => state.inputs.day)
   const dispatch = useDispatch();
 
   const addNote = () => {
-    if(title && content) {
+    if(title && content && day) {
       dispatch(noteActions.addNote({
-        title,
+        title,day,
         content
+        
       }))
       dispatch(inputActions.resetInputs())
     }
   }
 
   const updateNote = () => {
-    if(title && content) {
+    if(title && content && day) {
       dispatch(noteActions.updateNote(id, {
-        title, content
+        title, day,
+        content
       }))
       dispatch(inputActions.resetInputs())
     }    
@@ -49,15 +51,16 @@ const InputSection = () => {
       />
       <label>Data da tarefa </label>
       <input
-        type="Date"
+        type="date"
         placeholder="Data da tarefa"
-        // value={day}
-        // onChange={e => 
-        //   dispatch(inputActions.setInputDay(e.target.value))
-        // }
+        value={day}
+        onChange={e => 
+          dispatch(inputActions.setInputDay(e.target.value))
+        }
       />
       <textarea
         placeholder="O que deve ser feito?"
+        type="text"
         value={content}
         onChange={e => 
           dispatch(inputActions.setInputContent(e.target.value))
@@ -69,7 +72,7 @@ const InputSection = () => {
         <button
           onClick={id === -1 ? addNote : updateNote}
         >
-          {id === -1 ? "Adicinar Tarefa " : "UPDATE NOTE"}
+          {id === -1 ? "Adicinar Tarefa " : "Atualizar Tarefa"}
         </button>      
         {id !== -1 &&
           <button

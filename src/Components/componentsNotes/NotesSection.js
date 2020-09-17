@@ -12,6 +12,7 @@ const NotesSection = () => {
     dispatch(inputActions.setInputId(index));
     dispatch(inputActions.setInputTitle(item.title));
     dispatch(inputActions.setInputContent(item.content));
+    dispatch(inputActions.setInputDay(item.day));
   }
 
   if(notes.length === 0) {
@@ -29,6 +30,7 @@ const NotesSection = () => {
           return (
             <NoteItem
               title={item.title}
+              day={item.day}
               content={item.content}
               onItemClicked={() => {
                 onItemClicked(item, index);

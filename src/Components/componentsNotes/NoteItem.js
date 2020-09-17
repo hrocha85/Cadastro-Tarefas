@@ -1,7 +1,7 @@
 import React from 'react';
 import './NoteItem.styles.scss';
 
-const NoteItem = ({ title, content, onItemClicked}) => {
+const NoteItem = ({ title, day, content, onItemClicked}) => {
   return (
     <div
       className="NoteItem__container"
@@ -9,6 +9,7 @@ const NoteItem = ({ title, content, onItemClicked}) => {
       onClick={onItemClicked}
     >
       <h2>{title}</h2>
+      <p>{day}</p>
       <p>{content}</p>
     </div>
   );

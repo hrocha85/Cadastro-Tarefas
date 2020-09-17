@@ -4,6 +4,7 @@ const initialState = {
   id: -1,
   title: '',
   content: '',
+  day:''
 }
 
 export default (state = initialState, action) => {
@@ -13,6 +14,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         title,
+      }
+    }
+    case actionTypes.SET_INPUT_DAY: {
+      const { day } = action;
+      return {
+        ...state,
+        day,
       }
     }
     case actionTypes.SET_INPUT_CONTENT: {

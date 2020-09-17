@@ -5,7 +5,10 @@ export default {
     type: actionTypes.SET_INPUT_TITLE,
     title,
   }),
-
+  setInputDay: day => ({
+    type: actionTypes.SET_INPUT_DAY,
+    day
+  }),
   setInputContent: content => ({
     type: actionTypes.SET_INPUT_CONTENT,
     content
