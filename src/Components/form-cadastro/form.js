@@ -69,7 +69,7 @@ class CadastroForm extends Component {
                         <Col md={12}>
                         <FormGroup>
                             <Label for="exampleEmail">Email</Label>
-                            <Input type="email" name="email" id="exampleEmail" placeholder="seuemail@aqui.com.br"
+                            <Input type="email" name="email" id="exampleEmail" placeholder="seuemail@aqui.com.br" required
                              value={this.state.email}
                              onChange={this.onChange}
                              />
@@ -78,7 +78,7 @@ class CadastroForm extends Component {
                         <Col md={12}>
                             <FormGroup>
                                 <Label for="exampleNome">Nome</Label>
-                                <Input type="text" name="name" id="" placeholder="Nome"
+                                <Input type="text" name="name" id="" placeholder="Nome" required
                                 value={this.state.name}
                                 onChange={this.onChange}
                                 />
@@ -88,7 +88,7 @@ class CadastroForm extends Component {
                              <Col md={12}>
                             <FormGroup>
                                 <Label for="exampleData">Data de Nascimento</Label>
-                                <Input type="date" name="dateBorn" id=""
+                                <Input type="date" name="dateBorn" id="" required
                                 value={this.state.dateBorn}
                                 onChange={this.onChange} 
                                 />
