@@ -6,30 +6,36 @@ import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class CadastroForm extends Component {
 
+   
+
+    state = {
+       
+        email:'',
+        name:'',
+        dateBorn:'',
+        cpf:'',
+        adress:'',
+        reference:'',
+        city:'',
+        states:'',
+        password:''
+
+        
+    }
+
+    
+
      constructor(props){
         super(props);
-        this.state = {
-       
-            email:'',
-            name:'',
-            dateBorn:'',
-            cpf:'',
-            adress:'',
-            reference:'',
-            city:'',
-            states:'',
-            password:''
-    
-        };
+        
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+
+       
+        
      }
     
-   
-
-    
-
     
     onChange(e) {
         this.setState({
@@ -40,11 +46,16 @@ class CadastroForm extends Component {
 
     }
 
-    
+
+
+   
+     
 
     onSubmit (e) {
         e.preventDefault()
-        console.log(this.state);
+        localStorage.setItem("CADASTRO_EMAIL", this.state.email);   
+        localStorage.setItem("CADASTRO_SENHA", this.state.password);   
+         window.location.reload();
     }
 
    
