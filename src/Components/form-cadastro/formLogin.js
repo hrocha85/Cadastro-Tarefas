@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Label, Input } from 'reactstrap';
+import { Button, Label, Input } from 'reactstrap';
 import './formLogin.style.scss';
 
 export class FormLogin extends Component {
@@ -9,8 +9,8 @@ export class FormLogin extends Component {
     state = {
        
         email:'',
-        password:''
-        
+        password:'',
+        statusLogin:'true'
     }
 
     
@@ -43,17 +43,18 @@ export class FormLogin extends Component {
 
     onSubmit (e) {
         e.preventDefault()
+   
 
         const emailLocal = localStorage.getItem("CADASTRO_EMAIL");
         const senhaLocal = localStorage.getItem("CADASTRO_SENHA");
         
-        if (this.state.email && this.state.senha  ===  emailLocal && senhaLocal){
+        if ( (this.state.email === emailLocal) && (this.state.password === senhaLocal)){
             
-            return window.location.href ='/tarefas'
+            return (window.location.href ='/tarefas') && (localStorage.setItem("CADASTRO_STATUS_LOGIN",this.state.statusLogin));
             //alert("Senha e email incorretos"), 
             
 
-        } else { return alert('Senha Incorreta')}
+        } else { return window.location.reload(alert('Senha Incorreta'))}
        
         }
     
@@ -73,13 +74,13 @@ export class FormLogin extends Component {
                     <p>Crie</p>
                     <p>Atualise e conclua num lugar só</p>
                     <div className="form1 row ">
-                <form className="form-chid col-5 align-itens-center " onSubmit = {this.onSubmit} 
+                <form className="form-chid col-7 align-itens-center " onSubmit = {this.onSubmit} 
                 autoComplete="off" >
                     <Label for="exampleEmail" className="">Email</Label>
                     <Input type="email" name="email" id="" placeholder="seuemail@aqui.com.br" className="align-itens-center"   value={this.state.email}
                             onChange={this.onChange} />
                     <Label className="">Password</Label>
-                    <Input type="Senha" name="password" id="examplePassword" className="align-itens-center" placeholder="Sua senha aqui"
+                    <Input type="password" name="password" id="examplePassword" className="align-itens-center" placeholder="Sua senha aqui"
                         value={this.state.password}
                             onChange={this.onChange}/>
                     <Button className="m-2"> Entrar</Button>

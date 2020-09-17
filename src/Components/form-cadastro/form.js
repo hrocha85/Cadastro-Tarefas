@@ -17,7 +17,7 @@ class CadastroForm extends Component {
         adress:'',
         reference:'',
         city:'',
-        states:'',
+        coutry:'',
         password:''
 
         
@@ -54,7 +54,7 @@ class CadastroForm extends Component {
     onSubmit (e) {
         e.preventDefault()
         localStorage.setItem("CADASTRO_EMAIL", this.state.email);   
-        localStorage.setItem("CADASTRO_SENHA", this.state.password);   
+        localStorage.setItem("CADASTRO_SENHA", this.state.password);  
          window.location.reload();
     }
 
@@ -142,17 +142,17 @@ class CadastroForm extends Component {
                                 </Col>
                                 <Col md={12}>
                                 <FormGroup>
-                                    <Label for="exampleEstado">Estado</Label>
-                                    <Input type="text" name="state" 
-                                    id="exampleEstado" placeholder='"Ex:SP"'
-                                    value={this.state.states}
+                                    <Label for="">Estado</Label>
+                                    <Input type="text" name="coutry" 
+                                    id="" placeholder='"Ex:SP"'
+                                    value={this.state.coutry}
                                     onChange={this.onChange}
                                     />
                                 </FormGroup>
                                 </Col>   
                                 <Col md={12}>
                                 <FormGroup>
-                                    <Label for="Senha">Senha</Label>
+                                    <Label for="password">Senha</Label>
                                     <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8"
                                     value={this.state.password}
                                     onChange={this.onChange} 
@@ -161,7 +161,7 @@ class CadastroForm extends Component {
                                 </Col>
                         </Row>
                             <FormGroup check>
-                                <Input type="checkbox" name="check" id="exampleCheck"/>
+                                <Input type="checkbox" name="check" id="exampleCheck" required />
                                 <Label for="exampleCheck" check>Concorde aqui com os Termos de uso</Label>
                             </FormGroup>
                             <Button type= "submit" 

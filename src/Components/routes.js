@@ -9,6 +9,9 @@ import { BrowserRouter, Route, Switch}  from "react-router-dom";
 import App from '../App'
 
 export class routes extends Component {
+
+
+
     render() {
         return (
             <BrowserRouter>
@@ -24,3 +27,4 @@ export class routes extends Component {
 }
 
 export default routes
+
