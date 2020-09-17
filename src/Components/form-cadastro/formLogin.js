@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, Label, Input } from 'reactstrap';
+import './formLogin.style.scss';
 
 export class FormLogin extends Component {
 
@@ -71,22 +72,18 @@ export class FormLogin extends Component {
                 <h3>Contole suas tarefas no seu navagador </h3>
                     <p>Crie</p>
                     <p>Atualise e conclua num lugar só</p>
-                    <div className="container row ">
-                                     <Form className="align-self-center" onSubmit = {this.onSubmit} 
+                    <div className="form1 row ">
+                <form className="form-chid col-5 align-itens-center " onSubmit = {this.onSubmit} 
                 autoComplete="off" >
-                    <Form className= "">
-                        <Label for="exampleEmail" className="">Email</Label>
-                        <Input type="email" name="email" id="" placeholder="seuemail@aqui.com.br"   value={this.state.email}
-                             onChange={this.onChange} />
-                    </Form>
-                    <Form className=" ">
-                        <Label className="">Password</Label>
-                        <Input type="password" name="password" id="examplePassword" placeholder="Sua senha aqui"
-                         value={this.state.password}
-                             onChange={this.onChange}/>
-                    </Form>
-                    <Button> Entrar</Button>
-                </Form>
+                    <Label for="exampleEmail" className="">Email</Label>
+                    <Input type="email" name="email" id="" placeholder="seuemail@aqui.com.br" className="align-itens-center"   value={this.state.email}
+                            onChange={this.onChange} />
+                    <Label className="">Password</Label>
+                    <Input type="Senha" name="password" id="examplePassword" className="align-itens-center" placeholder="Sua senha aqui"
+                        value={this.state.password}
+                            onChange={this.onChange}/>
+                    <Button className="m-2"> Entrar</Button>
+                </form>
             
                     </div>
       
