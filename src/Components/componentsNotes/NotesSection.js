@@ -24,7 +24,7 @@ const NotesSection = () => {
   }
 
   return (
-    <div className="NotesSection__container">
+    <div className="NotesSection__container row">
       {notes.map((item, index) => {
         if(item) {
           return (

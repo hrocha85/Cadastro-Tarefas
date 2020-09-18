@@ -6,17 +6,9 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    // UncontrolledDropdown,
-    // DropdownToggle,
-    // DropdownMenu,
-    // DropdownItem,
-    // NavbarText
+    NavLink
 } from 'reactstrap';
-// import{ Link } from 'react-router-dom';
-// import Home from '../../pages/home/home';
-// import Jobs from '../../pages/jobs/jobs'
-// import Login from '../../pages/login/login'
+
 
 const Headers = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -38,10 +30,11 @@ const Headers = (props) => {
                             <NavLink href="https://github.com/hrocha85">GitHub</NavLink>
                         </NavItem>
                         <NavItem>
-                             <NavLink href="/tarefas">Dashboard</NavLink>                            
+                                                    
                         </NavItem>                    
                     </Nav>
-                    <NavLink href ='/login' >Login</NavLink>
+                        <span className='text-white'> Nome usuário </span>  
+                    <NavLink className='text-white' href ='/login' >Login</NavLink>
                 </Collapse>
             </Navbar>
         </div>

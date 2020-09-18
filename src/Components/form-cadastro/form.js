@@ -13,6 +13,8 @@ class CadastroForm extends Component {
         email:'',
         name:'',
         dateBorn:'',
+        monthBorn:'',
+        yearBorn:'',
         cpf:'',
         adress:'',
         reference:'',
@@ -44,18 +46,31 @@ class CadastroForm extends Component {
 
         })
 
+
     }
 
 
+              
 
    
      
 
     onSubmit (e) {
-        e.preventDefault()
+        // const idadeuser = idade (this.state.dateBorn) 
+        // var hoje = new D ate( );
+        // var year = hoje.getYear(); 
+        e.preventDefault(   
+        //     function idade (idadeuser)  {
+        //      if ((idadeuser - year) < 12 ){
+        //     return alert("Você nao tem a idade minima par se cadastrar");
+        // }}
+           )
         localStorage.setItem("CADASTRO_EMAIL", this.state.email);   
-        localStorage.setItem("CADASTRO_SENHA", this.state.password);  
-         window.location.reload();
+        localStorage.setItem("CADASTRO_SENHA", this.state.password); 
+        localStorage.setItem("CADASTRO_NAME", this.state.name);  
+        alert('Usuario cadastrado com sucesso');
+        // window.location.reload( )
+        window.location.href ='/login';
     }
 
    
@@ -153,7 +168,7 @@ class CadastroForm extends Component {
                                 <Col md={12}>
                                 <FormGroup>
                                     <Label for="password">Senha</Label>
-                                    <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8"
+                                    <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8" required
                                     value={this.state.password}
                                     onChange={this.onChange} 
                                     />
@@ -165,12 +180,11 @@ class CadastroForm extends Component {
                                 <Label for="exampleCheck" check>Concorde aqui com os Termos de uso</Label>
                             </FormGroup>
                             <Button type= "submit" 
-                            // onClick={() => { }}
-                            >Cadastrar-se</Button>
-                     </Form>
+                            onClick={()=>{}} >Cadastrar-se</Button>
+                                                        </Form>
 
-            </div>
-               
+                                                </div>
+                                                
          
 
         )

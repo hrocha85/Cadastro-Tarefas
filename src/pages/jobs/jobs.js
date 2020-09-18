@@ -18,24 +18,4 @@ export class jobs extends Component {
     }
 }
 
-export default jobs
-
-// import React, { Component } from 'react';
-
-// import { Provider } from 'react-redux';
-// import store from '../../Components/redux/createStore'
-// import InputSelection from '../../Components/componentsNotes/InputSection'
-// import NotesSection from '../../Components/componentsNotes/NotesSection';
-
-// export class jobs extends Component {
-//     render() {
-//         return (
-//       <Provider store={store}>
-//         <InputSelection />
-//         <NotesSection/>
-//       </Provider>
-//         )
-//     }
-// }
-
-// export default jobs
+export default jobs;

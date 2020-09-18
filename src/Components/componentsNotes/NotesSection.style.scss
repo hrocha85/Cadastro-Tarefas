@@ -1,5 +1,5 @@
 .NotesSection__container {
-  columns: 3 200px;
+  columns: 5 200px;
   column-gap: 1em;
   padding: 1em;
 }
@@ -8,4 +8,10 @@
   display: flex;
   align-items: center;
   justify-content:center;
+}
+
+p{
+
+  word-wrap: break-word;
+
 }
