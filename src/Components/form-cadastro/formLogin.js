@@ -38,15 +38,13 @@ export class FormLogin extends Component {
 
 
 
-   
-     
 
     onSubmit (e) {
         e.preventDefault()
    
-
+        const senhaLocal = localStorage.getItem("CADASTRO_SENHA")
         const emailLocal = localStorage.getItem("CADASTRO_EMAIL");
-        const senhaLocal = localStorage.getItem("CADASTRO_SENHA");
+ 
         
         if ( (this.state.email === emailLocal) && (this.state.password === senhaLocal)){
             

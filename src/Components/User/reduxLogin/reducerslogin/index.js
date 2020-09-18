@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import user from './tarefas';
+import user from './users';
 import inputs from './inputs';
 import storage from 'redux-persist/lib/storage';
 
