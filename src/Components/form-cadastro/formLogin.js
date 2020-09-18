@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Label, Input } from 'reactstrap';
+import { Button, Label, Input, } from 'reactstrap';
 import './formLogin.style.scss';
 
 export class FormLogin extends Component {
@@ -36,55 +36,33 @@ export class FormLogin extends Component {
 
     }
 
-        // states={
-        //     currentIndex: -1,
-        //     list: this.returnList()
-        // }
-
-        // returnList(e) {
-            
-        //     return JSON.parse(localStorage.getItem('persist:root')).user
-
-        // }
-
-
-    // teste(e){
-
-    //     JSON.parse(localStorage.getItem('persist:root').user).map((item)=>{
-    //         return  item.email
-        
-    //     })
-
-    // }
-
-
-    // if (array1 == true) {
-
-    //    return console.log("funcionou")
-    // }
-  
-
-    onSubmit (e) {
-        e.preventDefault()
-        var teste =[JSON.parse(localStorage.getItem('persist:root')).user];
-        teste.find(name =>teste.email ==="hrocha85@gmail.com" );
-        console.log(teste)
-        
-        const senhaLocal = localStorage.getItem("CADASTRO_SENHA")
-        const emailLocal = localStorage.getItem("CADASTRO_EMAIL");
  
-    
-        if ( (this.state.email === emailLocal) && (this.state.password === senhaLocal)){
-            
-            return (window.location.href ='/tarefas') && (localStorage.setItem("CADASTRO_STATUS_LOGIN",this.state.statusLogin));
-            //alert("Senha e email incorretos"), 
-            
 
-        } else { return window.location.reload(alert('Senha Incorreta'))}
-       
+    onSubmit(e) {
+        e.preventDefault()
+
+        const users = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).user;
+        var index = 0;
+
+        users.forEach(element => {
+            const emailLocal = element.email;
+            const senhaLocal = element.password;
+
+            if ((this.state.email === emailLocal) && (this.state.password === senhaLocal)) {
+                index = 1
+            }
+
+        });
+        
+        if (index === 1) {
+            return (window.location.href = '/tarefas') && (localStorage.setItem("CADASTRO_STATUS_LOGIN", this.state.statusLogin));
+        } else {
+            return alert('senha incorreta')
         }
+    }
 
 
+   
 
 
 
