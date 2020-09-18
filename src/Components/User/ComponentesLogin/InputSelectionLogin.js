@@ -65,18 +65,28 @@ const InputSectionLogin = () => {
                     />
                 </FormGroup>
                 </Col>
+                <Col md={12}>
+                <FormGroup>
+                    <Label for="exampleNome">Nome</Label>
+                    <Input type="text" name="name" id="" placeholder="Nome" required
+                   value={name}
+                   onChange={e => 
+                   dispatch(inputActionsLogin.setInputName(e.target.value))}
+                    />
+                </FormGroup>
+                </Col>
+
         
-                 <Col md={12}>
-                
-                    <FormGroup>
-                        <Label for="password">Senha</Label>
-                        <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8" required
-                       value={password}
-                       onChange={e => 
-                       dispatch(inputActionsLogin.setInputPassword(e.target.value))}
-                        />
-                    </FormGroup>
-                    </Col>
+              <Col md={12}>
+                <FormGroup>
+                    <Label for="password">Senha</Label>
+                    <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8" required
+                    value={password}
+                    onChange={e => 
+                    dispatch(inputActionsLogin.setInputPassword(e.target.value))}
+                    />
+                </FormGroup>
+                </Col>
                     </Row>
                 
                 <Button type= "submit" 

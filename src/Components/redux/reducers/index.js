@@ -7,7 +7,7 @@ import { persistReducer } from 'redux-persist';
 
 
 const persistConfig = {
-  key:'root',
+  key:'root1',
   storage,
   whitelist:['notes','input']
 };

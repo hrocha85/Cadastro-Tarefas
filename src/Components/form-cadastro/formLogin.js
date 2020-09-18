@@ -21,7 +21,7 @@ export class FormLogin extends Component {
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-
+        // this.returnList = this.returnList.bind(this)
        
         
      }
@@ -36,16 +36,44 @@ export class FormLogin extends Component {
 
     }
 
+        // states={
+        //     currentIndex: -1,
+        //     list: this.returnList()
+        // }
+
+        // returnList(e) {
+            
+        //     return JSON.parse(localStorage.getItem('persist:root')).user
+
+        // }
 
 
+    // teste(e){
+
+    //     JSON.parse(localStorage.getItem('persist:root').user).map((item)=>{
+    //         return  item.email
+        
+    //     })
+
+    // }
+
+
+    // if (array1 == true) {
+
+    //    return console.log("funcionou")
+    // }
+  
 
     onSubmit (e) {
         e.preventDefault()
-   
+        var teste =[JSON.parse(localStorage.getItem('persist:root')).user];
+        teste.find(name =>teste.email ==="hrocha85@gmail.com" );
+        console.log(teste)
+        
         const senhaLocal = localStorage.getItem("CADASTRO_SENHA")
         const emailLocal = localStorage.getItem("CADASTRO_EMAIL");
  
-        
+    
         if ( (this.state.email === emailLocal) && (this.state.password === senhaLocal)){
             
             return (window.location.href ='/tarefas') && (localStorage.setItem("CADASTRO_STATUS_LOGIN",this.state.statusLogin));
@@ -55,7 +83,7 @@ export class FormLogin extends Component {
         } else { return window.location.reload(alert('Senha Incorreta'))}
        
         }
-    
+
 
 
 
