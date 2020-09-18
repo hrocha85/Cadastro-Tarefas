@@ -49,7 +49,19 @@ class CadastroForm extends Component {
 
     }
 
+    // idade(e)  { 
+    //     var idadeuser = this.state.dateBorn.getYaer();
+        
+    //     function confereIdade(idadeuser){
+    //           if ((idadeuser - year) < 12 ){
+        
+    //             return alert("Você nao tem a idade minima par se cadastrar");
 
+    //        }
+
+            // }            if ((idadeuser - year) < 12 ){
+        //     return alert("Você nao tem a idade minima par se cadastrar");
+        // }}
               
 
    
@@ -71,7 +83,7 @@ class CadastroForm extends Component {
         alert('Usuario cadastrado com sucesso');
         // window.location.reload( )
         window.location.href ='/login';
-    }
+    };
 
    
     render(){
@@ -194,7 +206,7 @@ class CadastroForm extends Component {
 
         
     
-}
 
+}
 export default CadastroForm;
 

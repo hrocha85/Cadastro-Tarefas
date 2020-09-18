@@ -8,12 +8,20 @@ import {
     NavItem,
     NavLink
 } from 'reactstrap';
+// import { useSelector, useDispatch } from 'react-redux';
 
 
 const Headers = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    // const dispatch = useDispatch();
+    // const notes = useSelector(state => state.notes.notes)
+
+    
+    // dispatch(inputActions.setInputTitle(item.title));
+    
 
     return (
         <div>
@@ -33,7 +41,7 @@ const Headers = (props) => {
                                                     
                         </NavItem>                    
                     </Nav>
-                        <span className='text-white'> Nome usuário </span>  
+                        <span className='text-white'> {} </span>  
                     <NavLink className='text-white' href ='/login' >Login</NavLink>
                 </Collapse>
             </Navbar>
