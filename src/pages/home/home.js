@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
-import CadastroFrom from '/Users/henriquerocha/desenvolvimento/my-app/src/Components/form-cadastro/form';
 import './homeStyles.css';
+import { Provider } from 'react-redux';
+import {store, persistor } from '../../Components/User/reduxLogin/createStore';
+import InputSectionLogin from "../../Components/User/ComponentesLogin/InputSelectionLogin";
+import { PersistGate } from 'redux-persist/integration/react';
+
 
 export class Home extends Component {
 
 
     render() {
         return (
-        
+        <Provider store={store}>
+         <PersistGate loading={null} persistor={persistor}>
         <div className="home1 container-fluid ">
             <div className='row'> 
             <div className="titulo-home col-md-6 col-sm-12 p-2">
@@ -22,11 +27,14 @@ Empreendendo e desenvolvendo projetos de todos os níveis, atender clientes e su
 <br /> <a className=' link-site text-white' href='https://github.com/hrocha85 '>github.com/hrocha85 </a> </p>
             </div>
          <div className=" col-md-5 col-sm-12 p-5">
-              <CadastroFrom /> 
+    
+    <InputSectionLogin />
+    
          </div>
             </div>
             </div>
-            
+            </PersistGate>
+    </Provider>
         )
  
     }

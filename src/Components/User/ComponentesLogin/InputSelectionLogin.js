@@ -4,7 +4,7 @@ import loginActions from '../reduxLogin/actionsLogin/loginActions';
  import inputActionsLogin from '../reduxLogin/actionsLogin/inputActionsLogin';
 
 
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Label, Input, Form } from 'reactstrap';
 
 
 const InputSectionLogin = () => {
@@ -12,7 +12,7 @@ const InputSectionLogin = () => {
   const email = useSelector(state => state.inputs.email);
   const password = useSelector(state => state.inputs.password);
   const name = useSelector(state => state.inputs.name);
-  const dayBorn = useSelector(state => state.inputs.dayBron);
+  const dayBorn = useSelector(state => state.inputs.dayBorn);
   const monthBorn = useSelector(state => state.inputs.monthBorn);
   const yearBorn = useSelector(state => state.inputs.yearBorn);
   const cpf = useSelector(state => state.inputs.cpf);
@@ -23,14 +23,15 @@ const InputSectionLogin = () => {
   const coutry = useSelector(state => state.inputs.coutry);
   const dispatch = useDispatch();
 
-  const addUser = (e) => {
+  const addUser = () => {
     if(email && password && name) {
       dispatch(loginActions.addUser({
         email,name,
-        password,dayBorn,monthBorn,yearBorn,cpf, cep ,adress,reference,city,coutry 
+        password
         
       }))
-      dispatch(inputActionsLogin.resetInputs())
+      dispatch(inputActionsLogin.resetInputs()) && alert("teste")
+      
     }
   }
 
@@ -55,81 +56,84 @@ const InputSectionLogin = () => {
 
 <div className='container'>
     <Form  >
-        <Row  autoComplete="off"  form>
+        <Row  autoComplete="off" >
             <Col md={12}>
-            <FormGroup>
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="" placeholder="seuemail@aqui.com.br" required
+         
+                <Label for="email">Email</Label>
+                <Input autocomplete="off" type="email" name="email" id="" placeholder="seuemail@aqui.com.br" required
                  value={email}
                  onChange={e => 
                  dispatch(inputActionsLogin.setInputEmail(e.target.value))}
                  />
-            </FormGroup>
+            
             </Col>
             <Col md={12}>
-                <FormGroup>
-                    <Label for="exampleNome">Nome</Label>
-                    <Input type="text" name="name" id="" placeholder="Nome" required
+            
+                    <Label for="name">Nome</Label>
+                    <Input autocomplete="off" type="text" name="name" id="name" placeholder="Nome" required
                    value={name}
                    onChange={e => 
                    dispatch(inputActionsLogin.setInputName(e.target.value))}
                     />
-                </FormGroup>
+              
                 </Col>
+                </Row>
+                
+                <Label for="example">Data de Nasciemento</Label>
+                <Row>
                 <Col md={4}>
-                <Label for="exampleData">Data de Nasciemento</Label>
-                <FormGroup>
-                    <Label for="exampleData">Dia</Label>
-                    <Input type="text" name="dayBorn" id="" 
+            
+                    <Label for="example">Dia</Label>
+                    <Input type="text" name="dayBorn" id="Dia" 
                       value={dayBorn}
                       onChange={e => 
                       dispatch(inputActionsLogin.setInputDayBorn(e.target.value))}
                     />
-                    </FormGroup>
+                   
                     </Col>
                     <Col md={4}>
-                <FormGroup>
+              
                     <Label for="exampleMonth">Mês</Label>
-                    <Input type="text" name="monthBorn" id=""
+                    <Input type="text" name="monthBorn" id="mes"
                       value={monthBorn}
                       onChange={e => 
                       dispatch(inputActionsLogin.setInputMonthBorn(e.target.value))}
                     />
-                    </FormGroup>
+                    
                     </Col>
                     <Col md={4}>
-                <FormGroup>
+    
                     <Label for="example"> Ano</Label>
-                    <Input type="text" name="yaerBorn" id="" required
+                    <Input type="text" name="yaerBorn" id="ano" required
                       value={yearBorn}
                       onChange={e => 
                       dispatch(inputActionsLogin.setInputYearBorn(e.target.value))}
                     />
-                    </FormGroup>
+                   
                     </Col>
               
                   <Col md={12}>
-                  <FormGroup>
+                  
                       <Label for="exampleCPF">CPF</Label>
                       <Input  type="text" name="cpf" id="" placeholder="CPF" maxlength="11"
                       value={cpf}
                       onChange={e => 
                       dispatch(inputActionsLogin.setInputCpf(e.target.value))}
                       />
-                  </FormGroup>
+                 
                   </Col>
                   <Col md={12}>
-                  <FormGroup>
+                  
                       <Label for="exampleCep">Cep</Label>
                       <Input type="text" name="cep" maxlength="8" id=""
                      value={cep}
                      onChange={e => 
                      dispatch(inputActionsLogin.setInputCep(e.target.value))}
                       />
-                  </FormGroup>  
+                 
                   </Col>
                     <Col md={12}>
-                <FormGroup>
+              
                     <Label for="exampleEndereço">Endereço</Label>
                     <Input type="text" name="adress" id="" placeholder="Meu endereço aqui,
                     número"
@@ -137,10 +141,10 @@ const InputSectionLogin = () => {
                     onChange={e => 
                     dispatch(inputActionsLogin.setInputAdress(e.target.value))}
                     />
-                    </FormGroup>
+                    
                     </Col>
                     <Col md={12}>
-                    <FormGroup>
+                   
                         <Label for="exampleCep">Referência</Label>
                         <Input type="text" name="reference" id="" 
                         placeholder="Apartmento, casa.. "
@@ -148,46 +152,50 @@ const InputSectionLogin = () => {
                         onChange={e => 
                         dispatch(inputActionsLogin.setInputReference(e.target.value))}
                         />
-                      </FormGroup>
+                     
                       </Col>
                       <Col md={12}>
-                          <FormGroup>
+                         
                                 <Label for="exampleCidade">Cidade</Label>
-                              <Input type="text" name="city" id="" 
+                              <Input autocomplete="off" type="text" name="city" id="" 
                               value={city}
                               onChange={e => 
                                 dispatch(inputActionsLogin.setInputCity(e.target.value))}
                               />
-                          </FormGroup>
+                        
                     </Col>
                     <Col md={12}>
-                    <FormGroup>
-                        <Label for="">Estado</Label>
+                   
+                        <Label  autocomplete="off"  for="">Estado</Label>
                         <Input type="text" name="coutry" 
                         id="" placeholder='"Ex:SP"'
                         value={coutry}
                       onChange={e => 
                       dispatch(inputActionsLogin.setInputCoutry(e.target.value))}
                         />
-                    </FormGroup>
+                    
                     </Col>
                     <Col md={12}>
-                      <FormGroup>
-                          <Label for="password">Senha</Label>
-                          <Input type="password" name="password" id="Senha" placeholder="Crie uma Senha (Max: 8 Caracteres) " maxlength="8" required
-                          value={password}
-                          onChange={e => 
-                          dispatch(inputActionsLogin.setInputPassword(e.target.value))}
-                          />
-                      </FormGroup>
+    
+                     
+                      <Label for="">Password</Label>
+                      <Input autocomplete="off"
+                        type="password" name=""  
+                        id="" placeholder=""
+                        value={password}
+                        onChange={e => 
+                        dispatch(inputActionsLogin.setInputPassword(e.target.value))}
+                        />
+
+                     
+             
+
                       </Col>
           </Row>
                 
-                <Button 
-                 onClick={addUser()} 
-                >Cadastrar-se</Button>
+          <Button  type="submit" onClick={addUser}>Cadastrar-se</Button>
           </Form>
-
+         
 </div>
 
   

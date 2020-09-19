@@ -52,7 +52,7 @@ export default {
 
   resetInputs: () => ({
     type: actionTypes.RESET_INPUT,
-  })
+  }),
 }
 
 // setInputId: id => ({
