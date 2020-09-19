@@ -21,7 +21,6 @@ export class FormLogin extends Component {
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-        // this.returnList = this.returnList.bind(this)
        
         
      }

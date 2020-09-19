@@ -1,6 +1,7 @@
 import actionTypes from '../actionsTypes';
 
 const initialState = {
+   
   notes: []
 }
 
